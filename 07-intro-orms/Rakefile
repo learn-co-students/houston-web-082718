@@ -1,0 +1,7 @@
+require_relative 'config/environment'
+
+desc 'Loads up a console!'
+task :console do
+  # tweet1 = Tweet.new('hello')
+  Pry.start
+end

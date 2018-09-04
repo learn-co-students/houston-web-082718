@@ -89,5 +89,11 @@ GROUP BY artists.ArtistId;
     from greatest to least
 
 ```sql
-
+SELECT artists.name, COUNT(tracks.TrackId) as num_rock
+FROM tracks
+JOIN albums ON tracks.GenreId=5
+JOIN artists ON artists.ArtistId=albums.ArtistId
+GROUP BY artists.ArtistId
+HAVING num_rock > 30
+ORDER BY num_rock DESC;
 ```
