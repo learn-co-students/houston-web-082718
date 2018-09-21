@@ -1,0 +1,26 @@
+<%= link_to 'All Dogs', dogs_path %>
+<div class="container">
+    <div class="container contained show-page">
+        <div>
+            <h1> <%= @dog.name %> </h1>
+            <img class="large-profile" src="<%=@dog.image_url%>">
+        </div>
+
+       <div>
+        <h3>My Chew Toys:</h3>
+        <% @dog.chew_toys.each do |ct| %>
+            <h4><%= ct.desc %></h4>
+            <img class="thumbnail" src="<%= ct.img_url %>">
+        <% end %>
+       </div>
+    </div>
+
+    <div class="contained">
+        <div class="contained">
+            <h3>About Me: </h3>
+            <p><%= @dog.bio %></p>
+        </div>
+    </div>
+
+
+</div>

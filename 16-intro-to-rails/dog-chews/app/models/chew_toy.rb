@@ -1,0 +1,2 @@
+class ChewToy < ApplicationRecord
+end
