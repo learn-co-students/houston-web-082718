@@ -1,0 +1,12 @@
+ron = Koala.create(name: 'Ron', favorite_hobby: 'Painting')
+gertrude = Koala.create(name: 'Gertrude', favorite_hobby: 'Kickboxing')
+melvin = Koala.create(name: 'Melvin', favorite_hobby: 'Surfing')
+helga = Koala.create(name: 'Helga', favorite_hobby: 'Skydiving')
+
+rons_granite = PetRock.create(name: 'Granite of Ron', koala_id: ron.id)
+rons_obsidian = PetRock.create(name: 'Obsidian of Ron', koala_id: ron.id)
+gertrudes_basalt = PetRock.create(name: 'Basalt of Gertrude', koala_id: gertrude.id)
+melvins_shale = PetRock.create(name: 'Shale of Melvin', koala_id: melvin.id)
+helgas_sandstone = PetRock.create(name: 'Sandstone of Helga', koala_id: helga.id)
+helgas_limestone = PetRock.create(name: 'Limestone of Helga', koala_id: helga.id)
+helgas_marble = PetRock.create(name: 'Marble of Helga', koala_id: helga.id)
