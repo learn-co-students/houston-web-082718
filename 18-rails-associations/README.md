@@ -1,6 +1,6 @@
 # README
 
-- A koala has many pet rocks and a crayon belongs to a koala bear
+- A koala has many pet rocks and a pet rock belongs to a koala bear
 
 ## Deliverables
 

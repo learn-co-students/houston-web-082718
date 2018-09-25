@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_24_145148) do
+ActiveRecord::Schema.define(version: 2018_09_25_150231) do
 
   create_table "koalas", force: :cascade do |t|
     t.string "name"
@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 2018_09_24_145148) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "koala_id"
+    t.index ["koala_id"], name: "index_pet_rocks_on_koala_id"
   end
 
 end

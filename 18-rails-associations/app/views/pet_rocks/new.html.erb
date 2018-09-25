@@ -1,0 +1,7 @@
+<%= form_with model: PetRock.new do |form| %>
+  <%= form.text_field :name %>
+  <%#= form.text_field :koala_id %>
+  <%# form.select :koala_id, Koala.all.collect { |koala| [ koala.name, koala.id ] } %>
+  <%= form.collection_select :koala_id, Koala.all, :id, :name %>
+  <%= form.submit %>
+<% end %>

@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'pet_rocks/index'
+  get 'pet_rocks/show'
+  get 'pet_rocks/new'
+  resources :koalas, only: [:index, :show]
+  resources :pet_rocks, only: [:index, :show, :new, :create]
 end
