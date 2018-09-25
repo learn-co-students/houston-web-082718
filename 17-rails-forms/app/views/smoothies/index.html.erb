@@ -1,0 +1,4 @@
+<% @smoothies.each do |smoothie| %>
+  <p><%= link_to smoothie.name, smoothie %> is thick: <strong><%= smoothie.thick %></strong></p>
+<% end %>
+<%= link_to 'new', new_smoothie_path %>

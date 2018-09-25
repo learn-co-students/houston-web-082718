@@ -1,0 +1,8 @@
+<%= form_with model: @smoothie do |form| %>
+  <p><%= form.label :name %></p>
+  <%= form.text_field :name %>
+  <p><%= form.label :thick %></p>
+  <%= form.check_box :thick %>
+  <br>
+  <%= form.submit %>
+<% end %>

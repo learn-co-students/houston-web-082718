@@ -1,0 +1,4 @@
+<h4><%= @smoothie.name %></h4>
+<h1>thicc: <%= @smoothie.thick.to_s.upcase %></h1>
+<%= link_to 'edit', edit_smoothie_path(@smoothie) %> <%= link_to 'delete', @smoothie, method: 'delete'%>
+<%= link_to 'view all', smoothies_path %>
