@@ -1,0 +1,3 @@
+<% @coffee_cups.each do |coffee_cup| %>
+  <p><a href="/coffee_cups/<%= coffee_cup.id %>"><%= coffee_cup.human.name %>'s coffee cup</a></p>
+<% end %>

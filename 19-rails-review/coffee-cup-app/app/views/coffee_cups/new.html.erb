@@ -1,0 +1,15 @@
+<% if flash[:errors] %>
+  <% flash[:errors].each do |message| %>
+    <p><%= message %></p>
+  <% end %>
+<% end %>
+
+<%= form_with model: CoffeeCup.new do |f| %>
+  <div><%= f.number_field :size, placeholder: "Size" %></div>
+
+  <div>
+    <%= f.collection_select :human_id, Human.all, :id, :name %>
+  </div>
+
+  <div><%= f.submit %></div>
+<% end %>
