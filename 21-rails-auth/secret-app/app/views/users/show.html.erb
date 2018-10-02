@@ -1,0 +1,9 @@
+<% if @current_user %>
+  <h1><%= @user.username %></h1>
+
+  My secret is <%= @user.secret %>
+
+  <%= button_to "I wanna loggity log out", '/sessions', method: :delete %>
+<% else %>
+  YO. You aren't allowed to see <%= @user.username %>'s secret, brah!!!
+<% end %>
