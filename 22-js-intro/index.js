@@ -44,7 +44,7 @@ filteredNums = nums.filter(function(item, index) {
 // console.log(total);
 
 const result = nums.reduce(function(aggregator, item, index) {
-  aggregator += item;
+  aggregator += item; // + "1cat" + "2cat"
 
   return aggregator;
 }, 0);
