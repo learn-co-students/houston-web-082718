@@ -144,14 +144,39 @@ function functionalAddSix(x) {
 // Recursion - A function that calls itself
 
 function recursive(number) {
-  if (number === 1) {
+  if (number === 0) {
     console.log("FINISHED");
+    return;
   }
 
-  while (number > 0) {
+  if (number > 0) {
     console.log(number);
     recursive(number - 1);
   }
 }
 
-// recursive(10);
+recursive(10);
+
+// Closure 3 levels deep
+
+function cakeCreatorFunction(flavor) {
+  return function(icing) {
+    return function(size) {
+      console.log(
+        `Hi! I am a ${flavor} with icing: ${icing}, and my size is ${size}`
+      );
+    };
+  };
+}
+
+const chocolateCakeCreator = cakeCreatorFunction("chocolate");
+const vanillaCakeCreator = cakeCreatorFunction("vanilla");
+
+chocolateCakeCreator(true)("large");
+chocolateCakeCreator(false)("medium");
+
+const strawberryCakeWithIcingCreator = cakeCreatorFunction("strawberry")(true);
+const fluffyCakeWithoutIcingCreator = cakeCreatorFunction("fluffy")(false);
+
+strawberryCakeWithIcingCreator("small");
+fluffyCakeWithoutIcingCreator("enormous");
