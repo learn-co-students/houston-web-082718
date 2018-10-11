@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Find all the Pokemon</title>
+    <script type="text/javascript" src="script.js"></script>
+
+    <style media="screen">
+      body {
+      font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+      font-weight: 300;
+      }
+      #container {
+        width:1000px;
+        margin:auto;
+        margin-top:50px;
+      }
+      #pokemon-logo {
+        width:300px;
+        margin-left:330px;
+      }
+      input:focus {
+        outline: none;
+      }
+      form {
+          text-align: center;
+      }
+      .pokemon-cards{
+        float:left;
+        width:200px;
+        height: 200px;
+        background-color: #ffdb58;
+        color: #000080;
+        margin:15px;
+        text-align: center;
+      }
+      .center-text {
+        text-align: center;
+      }
+      .flip-image {
+        color:#2d72fc;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="fast">0</p>
+    <button onClick="fastCounter()">Fast</button>
+    <p id="slow">0</p>
+    <button onClick="slowCounter()">Slow</button>
+    <div id="container">
+      <img id="pokemon-logo" src="https://raw.githubusercontent.com/learn-co-curriculum/js-pokemon-search-practice-assignment/master/images/pokemon.png" alt="">
+
+      <form>
+        <p>Create a new Pokemon:</p>
+        <input id="name-input" type="text" placeholder="Name"></input>
+        <input id="sprite-input" type="text" placeholder="Sprite URL"></input>
+        <input id="submit" type="submit">
+      </form>
+
+      <div id="pokemon-container">
+      </div>
+
+
+
+
+
+
+      
+    </div>
+  </body>
+</html>
