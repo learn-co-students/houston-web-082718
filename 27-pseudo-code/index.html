@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet"type="text/css" href="./index.css">
+  </head>
+  <body class="parent">
+    <div id="reasons">
+      <h2>Pseudo-Code for what?</h2>
+      <ul>
+        <li><strong>Understanding:</strong> If you can't explain something simply, you don't understand it. You should understand your programs.</li>
+        <li><strong>Efficiency:</strong> Not planning our code leads to:
+          <ol>
+            <li>Poorly Engineered, what-the-h***-is-this looking-a** code.</li>
+            <li>Wasted time. It seems slower to do it at first, but this habit pays you in precious time.</li>
+            <li>Frustration and despair. You can avoid them both!</li>
+          </ol>
+        </li>
+        <li><strong>The Jobs!!</strong> If employers ask you to write an algorithm, and you don't think it through first, you won't get the job.</li>
+        <li><strong>More Jobs!!</strong> Many interviews simply consist of whiteboarding, which is basically pseudo-coding.</li>
+      </ul>
+    </div>
+    <div id="container">
+      <h1 id="title">Pseudo-Code Breakout Session!!!</h1>
+      <button id="next">Next</button>
+      <button id="last">Last</button>
+      <p id="desc"></p>
+      <div id="imgContainer">
+        <img src="" alt="" id="img">
+      </div>
+    </div>
+    <div class="example-container">
+      <h3>   
+        <a href="https://www.codewars.com/kata/number-of-people-in-the-bus" target="blank">Number of People in the Bus</a>
+      </h3>
+      <div class="parent">
+          <div>
+            <h5>Code</h5>
+            <code>
+                var number = function(busStops){<br>
+                  // Good Luck!<br>
+                  //We have array of (bus stops) <br>
+                  //let headCount = 0; keep track of people in bus<br>
+                  let headCount = 0;<br>
+                  //loop throgh tuples<br>
+                  busStops.forEach(<br>
+                    (tuple) => {<br>
+                      //add first num to headCount<br>
+                      headCount += tuple[0];<br>
+                      //subtract second num from headCount<br>
+                      headCount -= tuple[1];<br>
+                    }<br>
+                  )<br>
+                  //return headCount<br>
+                  return headCount<br>
+                }<br>
+            </code>
+            </div>
+        </div>
+      </div>
+      <div class="example-container">
+        <h3>   
+          <a href="https://www.codewars.com/kata/coloured-triangles" target="blank">RBG Pryamid</a>
+        </h3>
+        <div class="parent">
+            <div>
+              <h5>Code</h5>
+              <code>
+                  function helperMethod(tuplet) {<br>
+                    //take two elements of coll RBG<br>
+                    //set RBG arr<br>
+                    const rbg = ["R", "B", "G"]<br>
+                    //compare the two el to RBG arr by looping through tuplet<br>
+                    tuplet.forEach((char) => {<br>
+                      //find element<br>
+                      //remove from our rbg<br>
+                      rbg.splice(rbg.indexOf(char), 1);<br>
+                    });<br>
+                      <br>
+                    //return rbg[0]<br>
+                    return rbg[0];<br>
+                  }<br>
+                  
+                  function triangle(row) {<br>
+                  if (row.length == 1) {<br>
+                    return row;<br>
+                  }<br>
+                  //row is a string of length 1 - infinity, of el R,G,B<br>
+                  //turn string to array<br>
+                  row = row.split("");<br>
+                  //def next-string<br>
+                  product = "";<br>
+                  //loop through the array<br>
+                  for (let i = 0; i < row.length - 1 ; i++) {<br>
+                    let el1 = row[i];<br>
+                    let el2 = row[i + 1];<br>
+                    //evaluate for next color each time<br>
+                    //if el1 == el2<br>
+                    if (el1 == el2) {<br>
+                      //product = el1<br>
+                      product += el1;<br>
+                    //if different, <br>
+                    }<br>
+                    else {<br>
+                      //product = missing color<br>
+                      product += helperMethod([el1, el2]);<br>
+                    }<br>
+                  }<br>
+                  //if current array length > 1<br>
+                  if (row.length > 1) {<br>
+                    //call self again on product<br>
+                    return triangle(product);<br>
+                    }<br>
+                  //else<br>
+                  else {<br>
+                    //return the last color, aka Character, derived from all previous colors<br>
+                    return row[0];<br>
+                    }<br>
+                  }<br>
+              </code>
+              </div>
+          </div>
+        </div>
+    <script type="text/javascript" src="./index.js"></script>
+  </body>
+</html>
