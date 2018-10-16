@@ -32,6 +32,8 @@ function fetchAndDisplayToys() {
     });
 }
 
+function listenForLikeButtonClick() {}
+
 addBtn.addEventListener("click", () => {
   // hide & seek with the form
   addToy = !addToy;
