@@ -4,6 +4,34 @@ let addToy = false;
 
 // YOUR CODE HERE
 
+function fetchAndDisplayToys() {
+  fetch("http://localhost:3000/toys")
+    .then(response => response.json())
+    .then(response => {
+      const toys = response;
+
+      // Display all the toys
+
+      // 1. Get the toy-collection div
+      const toyCollectionDiv = document.getElementById("toy-collection");
+
+      // 1.5. Empty div
+      toyCollectionDiv.innerHTML = "";
+
+      // 2. Add html for each toy
+      toys.forEach(function(toy) {
+        toyCollectionDiv.innerHTML += `
+        <div class="card">
+          <h2>${toy.name}</h2>
+          <img src="${toy.image}" class="toy-avatar">
+          <p>${toy.likes} Likes <p>
+          <button class="like-btn" data-id="${toy.id}">Like <3</button>
+        </div>
+        `;
+      });
+    });
+}
+
 addBtn.addEventListener("click", () => {
   // hide & seek with the form
   addToy = !addToy;
@@ -35,30 +63,7 @@ addBtn.addEventListener("click", () => {
       }).then(function() {
         // 4. Render Jessie to the page
 
-        fetch("http://localhost:3000/toys")
-          .then(response => response.json())
-          .then(response => {
-            const toys = response;
-
-            // Display all the toys
-
-            // 1. Get the toy-collection div
-            const toyCollectionDiv = document.getElementById("toy-collection");
-
-            toyCollectionDiv.innerHTML = "";
-
-            // 2. Add html for each toy
-            toys.forEach(function(toy) {
-              toyCollectionDiv.innerHTML += `
-                <div class="card">
-                  <h2>${toy.name}</h2>
-                  <img src="${toy.image}" class="toy-avatar">
-                  <p>${toy.likes} Likes <p>
-                  <button class="like-btn">Like <3</button>
-                </div>
-                `;
-            });
-          });
+        fetchAndDisplayToys();
       });
     });
   } else {
@@ -73,37 +78,17 @@ addBtn.addEventListener("click", () => {
 
 document.addEventListener("DOMContentLoaded", function() {
   // Fetch Andy's toys
-  fetch("http://localhost:3000/toys")
-    .then(response => response.json())
-    .then(response => {
-      const toys = response;
+  fetchAndDisplayToys();
 
-      // Display all the toys
+  // NOT BEST IDEA
+  // const likeButtons = document.getElementsByClassName("like-btn");
 
-      // 1. Get the toy-collection div
-      const toyCollectionDiv = document.getElementById("toy-collection");
-
-      // 2. Add html for each toy
-      toys.forEach(function(toy) {
-        toyCollectionDiv.innerHTML += `
-        <div class="card">
-          <h2>${toy.name}</h2>
-          <img src="${toy.image}" class="toy-avatar">
-          <p>${toy.likes} Likes <p>
-          <button class="like-btn" data-id="${toy.id}">Like <3</button>
-        </div>
-        `;
-      });
-
-      // NOT BEST IDEA
-      // const likeButtons = document.getElementsByClassName("like-btn");
-
-      // Array.from(likeButtons).forEach(function(likeButton) {
-      //   likeButton.addEventListener("click", function(event) {
-      //     console.log(event);
-      //   });
-      // });
-    });
+  // Array.from(likeButtons).forEach(function(likeButton) {
+  //   likeButton.addEventListener("click", function(event) {
+  //     console.log(event);
+  //   });
+  // });
+  // });
 
   // Add global event listener (event delegation)
   document.addEventListener("click", function(event) {
