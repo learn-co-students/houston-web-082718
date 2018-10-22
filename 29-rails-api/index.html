@@ -1,0 +1,9 @@
+<body>
+  <script>
+    fetch('http://localhost:3000/banana').then(r => r.json()).then(r => {
+      r.forEach(icing => {
+        document.body.innerHTML += `<p>${icing.color} | ${icing.boolean}</p>`
+      })
+    })
+  </script>
+</body>
