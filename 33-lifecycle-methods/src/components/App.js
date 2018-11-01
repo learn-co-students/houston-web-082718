@@ -12,12 +12,38 @@ class App extends React.Component {
   };
 
   componentDidMount() {
-    console.log("======", "???");
     fetch("/api/pets")
       .then(response => response.json())
       .then(pets => {
         this.setState({ pets });
       });
+
+    const divEl = document.querySelector(".my-html");
+    divEl.addEventListener("click", this.listenToMyHtml);
+
+    this.forceUpdate();
+  }
+
+  componentWillUpdate(nextProps, nextState) {
+    // console.log("Current filter: ", this.state.filters.type);
+    // console.log("Next filter: ", nextState.filters.type);
+    if (this.state.filters.type !== nextState.filters.type) {
+      //Do something in response
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log("Previous filter: ", prevState.filters.type);
+    console.log("Current filter: ", this.state.filters.type);
+  }
+
+  componentWillUnmount() {
+    const divEl = document.querySelector(".my-html");
+    divEl.removeEventListener("click", this.listenToMyHtml);
+  }
+
+  listenToMyHtml() {
+    alert("CLICKED!!!");
   }
 
   onChangeType = event => {
@@ -56,10 +82,14 @@ class App extends React.Component {
   };
 
   render() {
+    const html =
+      '<div class="my-html">Some text that I want a click handler on</div>';
+
     return (
       <div className="ui container">
+        <div dangerouslySetInnerHTML={{ __html: html }} />
         <header>
-          <h1 className="ui dividing header">Reacttt Animal Shelter</h1>
+          <h1 className="ui dividing header">React Animal Shelter</h1>
         </header>
         <div className="ui container">
           <div className="ui grid">
