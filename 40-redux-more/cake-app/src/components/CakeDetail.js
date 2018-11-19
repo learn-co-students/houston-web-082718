@@ -21,7 +21,9 @@ const CakeDetail = ({
 };
 
 const mapStateToProps = state => {
-  return state.CakeDetail;
+  const id = window.location.pathname.split("/cake/")[1];
+  const cake = state.cakeList.find(cake => cake.id === Number(id));
+  return cake;
 };
 
 export default connect(mapStateToProps)(CakeDetail);
