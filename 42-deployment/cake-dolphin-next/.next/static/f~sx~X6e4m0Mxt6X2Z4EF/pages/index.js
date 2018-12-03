@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{208:function(e,n,t){__NEXT_REGISTER_PAGE("/",function(){return e.exports=t(209),{page:e.exports.default}})},209:function(e,n,t){"use strict";t.r(n);var a=t(4),r=t.n(a),o=t(50),u=t.n(o);n.default=function(){return r.a.createElement(u.a,{href:"/cakes"},r.a.createElement("h1",null,"Home"))}}},[[208,1,0]]]);
